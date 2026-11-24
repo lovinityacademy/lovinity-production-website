@@ -2,62 +2,62 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff8f1">
   <meta
     name="description"
-    content="Lovinity Production。謙虚さと感謝を大切に、アーティストとファンがともに作品を生み出し、世界を目指す芸能プロダクション。"
+    content="Lovinity Production。謙虚さと感謝を大切に、アーティストの個性と表現を育て、ファンとともに世界を目指す芸能プロダクション。"
   >
-  <meta name="theme-color" content="#090909">
-
-  <title>Lovinity Production | 芸能プロダクション</title>
+  <title>Lovinity Production</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,800;1,900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
     rel="stylesheet"
   >
 
   <style>
     :root {
-      --black: #090909;
-      --white: #faf8f5;
-      --pink: #ff3ca6;
-      --lime: #dbff62;
-      --muted: #c1bdc6;
-      --line: rgba(255, 255, 255, 0.18);
+      --coral: #e95670;
+      --cream: #fff8f1;
+      --yellow: #ffe68c;
+      --mint: #bce9db;
+      --lavender: #d8cbf0;
+      --ink: #303033;
+      --line: rgba(48, 48, 51, .2);
     }
 
     * {
       box-sizing: border-box;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       margin: 0;
-      background: var(--black);
-      color: var(--white);
+      background: var(--cream);
+      color: var(--ink);
       font-family: "Noto Sans JP", sans-serif;
       line-height: 1.95;
       -webkit-font-smoothing: antialiased;
     }
 
     ::selection {
-      background: var(--lime);
-      color: var(--black);
+      background: var(--coral);
+      color: white;
     }
 
     a {
       color: inherit;
-      text-underline-offset: 0.3em;
+      text-underline-offset: .3em;
     }
 
-    a:focus-visible {
-      outline: 3px solid var(--lime);
-      outline-offset: 6px;
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    textarea:focus-visible {
+      outline: 3px solid var(--coral);
+      outline-offset: 5px;
     }
 
     img {
@@ -66,9 +66,15 @@
       height: auto;
     }
 
-    .container {
-      width: min(1200px, 88%);
-      margin: 0 auto;
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    [hidden] {
+      display: none !important;
     }
 
     h1,
@@ -81,52 +87,77 @@
     h1,
     h2,
     h3 {
-      line-height: 1.35;
+      line-height: 1.4;
+    }
+
+    h1,
+    h2 {
+      letter-spacing: -.04em;
     }
 
     h2 {
-      font-size: clamp(27px, 3.8vw, 46px);
+      font-size: clamp(27px, 3.5vw, 44px);
       font-weight: 900;
-      letter-spacing: -0.04em;
-      text-wrap: balance;
     }
 
     h3 {
-      font-size: 23px;
+      font-size: 22px;
       font-weight: 900;
-      letter-spacing: -0.03em;
     }
 
-    section {
-      position: relative;
-      padding: 110px 0;
-      scroll-margin-top: 24px;
+    .container {
+      width: min(1160px, 88%);
+      margin: auto;
+    }
+
+    .section {
+      padding: 90px 0;
+    }
+
+    .intro {
+      max-width: 720px;
+      font-size: 15px;
+      line-height: 2.2;
+    }
+
+    .eyebrow {
+      margin-bottom: 12px;
+      color: var(--coral);
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: .09em;
+      line-height: 1;
+    }
+
+    .display {
+      margin-bottom: 22px;
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: clamp(68px, 13vw, 150px);
+      font-weight: 900;
+      line-height: .9;
+      letter-spacing: -.035em;
     }
 
     /* ヘッダー */
     header {
       position: relative;
-      z-index: 5;
-      background: var(--black);
+      z-index: 10;
       border-bottom: 1px solid var(--line);
+      background: var(--cream);
     }
 
     .header-inner {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
-      gap: 18px;
-      padding: 24px 0;
+      gap: 24px;
+      padding: 12px 0;
     }
 
     .brand {
-      font-family: "Barlow Condensed", sans-serif;
-      font-size: 30px;
-      font-weight: 800;
-      line-height: 1;
-      letter-spacing: -0.02em;
-      text-decoration: none;
+      flex-shrink: 0;
+      width: 130px;
     }
 
     nav {
@@ -134,446 +165,329 @@
       align-items: center;
       flex-wrap: wrap;
       gap: 12px 22px;
-      font-size: 12px;
-      font-weight: 700;
     }
 
     nav a {
+      font-size: 12px;
+      font-weight: 700;
       text-decoration: none;
-      transition: color 0.2s;
     }
 
-    nav a:hover {
-      color: var(--pink);
+    nav a:hover,
+    nav a[aria-current="page"] {
+      color: var(--coral);
     }
 
-    nav .nav-contact {
-      padding: 8px 16px;
-      border: 1px solid var(--line);
+    .nav-contact {
+      padding: 9px 17px;
+      border: 1px solid currentColor;
       border-radius: 100px;
     }
 
-    /* トップ */
+    /* ロゴを主役にしたトップ */
     .hero {
+      position: relative;
       isolation: isolate;
       overflow: hidden;
-      padding: 65px 0 95px;
+      display: grid;
+      align-content: center;
+      min-height: 76svh;
+      padding: 30px 0 68px;
       background:
         radial-gradient(
-          ellipse at 90% 25%,
-          rgba(255, 60, 166, 0.4),
+          ellipse at 0% 0%,
+          rgba(255, 230, 140, .75),
           transparent 48%
         ),
         radial-gradient(
-          ellipse at 10% 90%,
-          rgba(124, 65, 255, 0.25),
-          transparent 50%
+          ellipse at 100% 90%,
+          rgba(216, 203, 240, .8),
+          transparent 48%
         ),
-        #0c090f;
+        var(--cream);
     }
 
     .hero::before {
       content: "";
       position: absolute;
       z-index: -1;
-      inset: 0;
-      background-image:
-        linear-gradient(
-          rgba(255, 255, 255, 0.04) 1px,
-          transparent 1px
-        ),
-        linear-gradient(
-          90deg,
-          rgba(255, 255, 255, 0.04) 1px,
-          transparent 1px
-        );
-      background-size: 72px 72px;
-      mask-image: linear-gradient(#000, transparent);
+      top: 14%;
+      right: -90px;
+      width: 310px;
+      height: 310px;
+      border: 45px solid rgba(188, 233, 219, .65);
+      border-radius: 50%;
       pointer-events: none;
     }
 
-    .hero::after {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      top: 12%;
-      right: -160px;
-      width: 570px;
-      height: 570px;
-      border: 2px solid rgba(255, 255, 255, 0.25);
-      border-radius: 50%;
-      box-shadow:
-        0 0 0 55px rgba(255, 60, 166, 0.07),
-        0 0 0 110px rgba(255, 60, 166, 0.05);
-      pointer-events: none;
-      animation: stage-glow 7s ease-in-out infinite alternate;
+    .hero-title {
+      margin: 0;
     }
 
     .hero-logo {
-      width: 160px;
-      max-width: 55%;
-      margin-bottom: 36px;
+      width: min(100%, 1050px);
+      margin: 0 auto;
     }
 
-    .hero h1 {
-      margin-bottom: 34px;
-      font-family: "Barlow Condensed", sans-serif;
-      font-size: clamp(66px, 12vw, 166px);
-      font-style: italic;
-      font-weight: 900;
-      line-height: 0.86;
-      letter-spacing: -0.035em;
-      text-transform: uppercase;
-      color: var(--pink);
-      text-shadow: 5px 5px 0 #501036;
+    .hero-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-top: 8px;
     }
 
-    .hero h1 span {
-      display: block;
+    .hero-copy {
+      margin: 0;
+      font-size: clamp(17px, 2vw, 23px);
+      font-weight: 700;
+      line-height: 1.8;
     }
 
-    .hero h1 .title-outline {
-      margin-top: 9px;
-      color: var(--white);
-      text-shadow: none;
-    }
-
-    @supports (-webkit-text-stroke: 1px white) {
-      .hero h1 .title-outline {
-        color: transparent;
-        -webkit-text-stroke: 2px var(--white);
-      }
-    }
-
-    .hero h2 {
-      max-width: 780px;
-      font-size: clamp(23px, 3vw, 35px);
-    }
-
-    .hero-message {
-      max-width: 610px;
-      color: #e0d9e3;
-      font-size: 15px;
-      line-height: 2.2;
-    }
-
-    .brand-strip {
-      overflow: hidden;
-      padding: 14px 6%;
-      background: var(--lime);
-      color: var(--black);
-      font-family: "Barlow Condensed", sans-serif;
-      font-size: clamp(18px, 3vw, 30px);
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-align: center;
-      line-height: 1.3;
+    .color-band {
+      height: 16px;
+      background: linear-gradient(
+        90deg,
+        var(--coral) 0% 25%,
+        var(--yellow) 25% 50%,
+        var(--mint) 50% 75%,
+        var(--lavender) 75% 100%
+      );
     }
 
     /* ボタン */
     .actions {
       display: flex;
-      align-items: center;
       flex-wrap: wrap;
-      gap: 18px;
-      margin-top: 34px;
+      align-items: center;
+      gap: 16px;
+      margin-top: 30px;
+    }
+
+    .hero-bottom .actions {
+      margin: 0;
     }
 
     .button {
       display: inline-flex;
-      justify-content: center;
       align-items: center;
-      gap: 22px;
+      justify-content: center;
+      gap: 20px;
       max-width: 100%;
-      padding: 16px 26px;
-      border: 1px solid var(--lime);
-      background: var(--lime);
-      color: var(--black);
+      padding: 15px 24px;
+      border: 1px solid var(--ink);
+      border-radius: 100px;
+      background: var(--ink);
+      color: white;
       font-size: 13px;
-      font-weight: 900;
-      line-height: 1.7;
+      font-weight: 700;
+      line-height: 1.6;
       text-align: center;
       text-decoration: none;
-      box-shadow: 5px 5px 0 rgba(219, 255, 98, 0.2);
-      transition:
-        transform 0.2s,
-        box-shadow 0.2s,
-        background 0.2s;
+      cursor: pointer;
+      transition: transform .2s, box-shadow .2s;
     }
 
     .button:hover {
-      transform: translate(-2px, -2px);
-      background: #e9ffab;
-      box-shadow: 8px 8px 0 rgba(219, 255, 98, 0.2);
+      transform: translateY(-3px);
+      box-shadow: 0 7px 0 rgba(48, 48, 51, .12);
     }
 
     .button-outline {
-      border-color: rgba(255, 255, 255, 0.5);
       background: transparent;
-      color: var(--white);
-      box-shadow: none;
-    }
-
-    .button-outline:hover {
-      background: #29202c;
-      box-shadow: none;
+      color: var(--ink);
     }
 
     .arrow {
       flex-shrink: 0;
-      font-size: 24px;
-      line-height: 1;
+      font-size: 22px;
     }
 
-    /* セクション共通 */
-    .section-label {
-      margin-bottom: 14px;
-      color: var(--pink);
-      font-family: "Barlow Condensed", sans-serif;
-      font-size: clamp(48px, 8vw, 90px);
-      font-weight: 800;
-      line-height: 1;
-      letter-spacing: -0.02em;
-    }
-
-    .section-intro {
-      max-width: 740px;
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 2.2;
-    }
-
-    .cards {
+    /* カード */
+    .grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 22px;
-      margin-top: 42px;
+      margin-top: 36px;
     }
 
     .card {
       min-width: 0;
-      padding: 38px;
+      padding: 36px;
       border: 1px solid var(--line);
-      background: #131214;
-      transition:
-        border-color 0.25s,
-        transform 0.25s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      border-color: var(--pink);
-    }
-
-    .card p {
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 2.15;
+      border-radius: 22px;
+      background: white;
     }
 
     .card p:last-child {
       margin-bottom: 0;
     }
 
-    /* 理念 */
-    #about .card {
-      border-top: 4px solid var(--pink);
+    .card p {
+      font-size: 14px;
+      line-height: 2.1;
     }
 
-    #about .card:last-child {
-      border-top-color: var(--lime);
+    .coral {
+      background: var(--coral);
     }
 
-    #about .card h3 {
-      color: var(--pink);
+    .yellow {
+      background: var(--yellow);
+    }
+
+    .mint {
+      background: var(--mint);
+    }
+
+    .lavender {
+      background: var(--lavender);
+    }
+
+    .card-label {
       font-family: "Barlow Condensed", sans-serif;
-      font-size: 54px;
+      font-size: 42px;
       font-weight: 800;
       line-height: 1;
-      text-transform: uppercase;
     }
 
-    #about .card:last-child h3 {
-      color: var(--lime);
-    }
-
-    /* 代表紹介 */
-    #team {
-      overflow: hidden;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      background:
-        radial-gradient(
-          ellipse at 0% 100%,
-          rgba(255, 60, 166, 0.2),
-          transparent 60%
-        ),
-        #17121b;
-    }
-
-    .profile {
-      display: grid;
-      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
-      align-items: center;
-      gap: 70px;
-    }
-
-    .profile-photo {
-      width: 100%;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      box-shadow: 18px 18px 0 var(--pink);
-      transform: rotate(-3deg);
-    }
-
-    #team .section-label {
-      color: var(--lime);
-      font-size: clamp(48px, 6vw, 74px);
-    }
-
-    .profile-text {
-      color: #d8d1dd;
-      font-size: 14px;
-      line-height: 2.2;
-    }
-
-    .quote {
-      color: var(--white);
-      font-size: 20px;
-      font-weight: 700;
-      line-height: 1.9;
-    }
-
-    /* アーティスト育成 */
-    #audition {
-      background:
-        radial-gradient(
-          ellipse at 100% 0%,
-          rgba(115, 60, 255, 0.16),
-          transparent 45%
-        ),
-        var(--black);
-    }
-
-    #audition .section-label {
-      color: var(--lime);
-    }
-
-    #audition .card {
-      border-top: 4px solid var(--pink);
-      background: linear-gradient(145deg, #251321, #111113 75%);
-    }
-
-    #audition .card:nth-child(2),
-    #audition .card:nth-child(3) {
-      border-top-color: var(--lime);
-      background: linear-gradient(145deg, #20241a, #111113 75%);
-    }
-
-    /* スクール */
-    #school {
-      overflow: hidden;
-      background: var(--lime);
-      color: var(--black);
-    }
-
-    .school-inner {
+    .split {
       display: grid;
       grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
       align-items: center;
-      gap: 64px;
+      gap: 60px;
     }
 
-    #school .section-label {
-      color: var(--black);
-      font-size: clamp(50px, 7vw, 85px);
+    .link-card {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+      transition: transform .2s;
     }
 
-    .school-name {
+    .link-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .link-card .card-label {
+      font-size: clamp(42px, 6vw, 65px);
+    }
+
+    /* 各ページの見出し */
+    .page-head {
+      padding: 70px 0 60px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .page-head .eyebrow {
+      color: var(--ink);
+    }
+
+    .page-head p:last-child {
       margin-bottom: 0;
+    }
+
+    /* 代表紹介 */
+    .portrait {
+      width: min(100%, 430px);
+      margin: 0 auto;
+      border: 1px solid var(--ink);
+      border-radius: 180px 180px 20px 20px;
+      box-shadow: 14px 14px 0 var(--coral);
+    }
+
+    .quote {
+      font-size: clamp(21px, 2.5vw, 30px);
+      font-weight: 900;
+      line-height: 1.8;
+    }
+
+    .role {
+      color: #615b62;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    /* スクール案内 */
+    .school-name {
       font-family: "Barlow Condensed", sans-serif;
-      font-size: clamp(48px, 6vw, 80px);
+      font-size: clamp(60px, 8vw, 105px);
       font-weight: 800;
-      line-height: 0.98;
-      letter-spacing: -0.03em;
+      line-height: .95;
     }
 
     .school-name span {
       display: block;
     }
 
-    #school .section-intro {
-      color: #252a16;
-      font-weight: 500;
-    }
-
-    #school .button {
-      border-color: var(--black);
-      background: var(--black);
-      color: var(--white);
-      box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.18);
-    }
-
-    #school .button:hover {
-      background: #252525;
-    }
-
     /* お問い合わせ */
-    #contact {
-      overflow: hidden;
-      background: var(--pink);
-      color: var(--black);
+    .contact-layout {
+      display: grid;
+      grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+      gap: 60px;
+      align-items: start;
     }
 
-    #contact .section-label {
-      color: var(--black);
-      font-size: clamp(68px, 13vw, 156px);
-      font-weight: 900;
-      letter-spacing: -0.035em;
-    }
-
-    #contact h2 {
-      font-size: clamp(24px, 3vw, 34px);
-    }
-
-    #contact .section-intro {
-      color: #291020;
-      font-weight: 500;
-    }
-
-    .contact-email {
-      margin-top: 30px;
-      font-family: "Barlow Condensed", sans-serif;
-      font-size: clamp(22px, 4vw, 42px);
-      font-weight: 600;
-      line-height: 1.4;
+    .email {
+      font-size: 15px;
       overflow-wrap: anywhere;
     }
 
-    #contact .button {
-      border-color: var(--black);
-      background: var(--black);
-      color: var(--white);
-      box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.2);
+    form {
+      padding: 36px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: white;
     }
 
-    #contact .button:hover {
-      background: #252025;
+    .field {
+      margin-bottom: 22px;
     }
 
-    #contact .button-outline {
-      background: transparent;
-      color: var(--black);
-      box-shadow: none;
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 13px;
+      font-weight: 700;
     }
 
-    #contact .button-outline:hover {
-      background: rgba(0, 0, 0, 0.08);
+    input,
+    select,
+    textarea {
+      display: block;
+      width: 100%;
+      min-width: 0;
+      padding: 13px 14px;
+      border: 1px solid #aaa1a5;
+      border-radius: 8px;
+      background: #fffdfa;
+      color: var(--ink);
+      font-size: 16px;
+    }
+
+    textarea {
+      min-height: 180px;
+      resize: vertical;
+    }
+
+    .form-note {
+      font-size: 12px;
+      line-height: 1.9;
+      color: #615b62;
+    }
+
+    .form-status {
+      margin-top: 18px;
+      font-size: 13px;
+      font-weight: 700;
     }
 
     footer {
-      padding: 28px 0;
-      background: var(--black);
-      color: #c2bcc5;
+      padding: 32px 0;
+      border-top: 1px solid var(--line);
+      background: var(--ink);
+      color: var(--cream);
       font-size: 12px;
     }
 
@@ -582,7 +496,7 @@
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 16px;
+      gap: 20px;
     }
 
     .footer-links {
@@ -591,263 +505,331 @@
       gap: 18px;
     }
 
-    @keyframes stage-glow {
-      from {
-        opacity: 0.55;
-        transform: scale(0.96);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1.04);
-      }
-    }
-
-    /* スマートフォン */
     @media (max-width: 760px) {
       .header-inner {
+        flex-direction: column;
         align-items: flex-start;
-        gap: 20px;
-        padding: 20px 0;
+        gap: 4px;
+        padding: 10px 0 18px;
       }
 
       .brand {
-        font-size: 28px;
+        width: 110px;
       }
 
       nav {
-        width: 100%;
         gap: 12px 18px;
+      }
+
+      nav a {
         font-size: 11px;
       }
 
-      nav .nav-contact {
+      .nav-contact {
         padding: 0;
         border: 0;
       }
 
-      section {
-        padding: 70px 0;
-      }
-
       .hero {
-        padding: 45px 0 65px;
+        min-height: 62svh;
+        padding: 26px 0 48px;
       }
 
-      .hero-logo {
-        width: 130px;
-        margin-bottom: 30px;
+      .hero .container {
+        width: 94%;
       }
 
-      .hero h1 {
-        font-size: clamp(56px, 17vw, 112px);
-        text-shadow: 3px 3px 0 #501036;
+      .hero-bottom {
+        width: 94%;
+        margin: 10px auto 0;
       }
 
-      .hero::after {
-        top: 70px;
-        right: -230px;
-        width: 410px;
-        height: 410px;
+      .hero::before {
+        width: 220px;
+        height: 220px;
+        right: -110px;
+        border-width: 30px;
       }
 
-      .hero-message {
-        font-size: 14px;
+      .hero-copy {
+        font-size: 17px;
       }
 
-      .section-label {
-        font-size: 62px;
+      .section {
+        padding: 60px 0;
       }
 
-      .cards {
+      .page-head {
+        padding: 48px 0;
+      }
+
+      .display {
+        font-size: clamp(56px, 15vw, 90px);
+      }
+
+      .grid,
+      .split,
+      .contact-layout {
         grid-template-columns: 1fr;
-        gap: 18px;
-        margin-top: 30px;
+        gap: 28px;
       }
 
-      .card {
-        padding: 28px;
+      .card,
+      form {
+        padding: 26px;
       }
 
-      .profile {
-        grid-template-columns: 1fr;
-        gap: 48px;
-      }
-
-      .profile-photo {
-        width: min(80%, 340px);
-        margin: 0 auto;
-        box-shadow: 12px 12px 0 var(--pink);
-      }
-
-      #team .section-label {
-        font-size: 60px;
-      }
-
-      .school-inner {
-        grid-template-columns: 1fr;
-        gap: 32px;
-      }
-
-      .school-name {
-        font-size: 62px;
+      .portrait {
+        width: 80%;
+        margin-bottom: 18px;
+        box-shadow: 10px 10px 0 var(--coral);
       }
 
       .button {
-        padding: 14px 20px;
+        padding: 13px 20px;
         font-size: 12px;
-      }
-
-      #contact .section-label {
-        font-size: clamp(54px, 18vw, 100px);
       }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
       *,
       *::before,
       *::after {
-        animation: none !important;
         transition: none !important;
       }
     }
   </style>
 </head>
 
-<body id="top">
+<body>
   <header>
     <div class="container header-inner">
-      <a class="brand" href="#top">
-        Lovinity Production
+      <a class="brand" href="#home" aria-label="ホームへ">
+        <img
+          src="https://static.wixstatic.com/media/88ab5b_e7083fcbaaf64859982f945788f6dcb4~mv2.png"
+          alt="Lovinity Production"
+        >
       </a>
 
       <nav aria-label="メインメニュー">
-        <a href="#about">私たちについて</a>
-        <a href="#team">チーム</a>
+        <a href="#home">ホーム</a>
+        <a href="#team">チーム紹介</a>
+        <a href="#staff">スタッフ募集</a>
         <a href="#audition">オーディション</a>
-        <a href="#school">スクール</a>
+        <a href="https://lovinityacademy.github.io/lovinity-academy-website/">
+          スクール
+        </a>
         <a class="nav-contact" href="#contact">お問い合わせ</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <!-- トップ -->
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="container">
-        <img
-          class="hero-logo"
-          src="https://static.wixstatic.com/media/88ab5b_e7083fcbaaf64859982f945788f6dcb4~mv2.png"
-          alt="Lovinity Productionのロゴ"
-        >
+    <!-- ホーム -->
+    <section data-page id="home" aria-label="ホーム">
+      <div class="hero">
+        <div class="container">
+          <h1 class="hero-title" tabindex="-1">
+            <img
+              class="hero-logo"
+              src="https://static.wixstatic.com/media/88ab5b_e7083fcbaaf64859982f945788f6dcb4~mv2.png"
+              alt="Lovinity Production"
+              fetchpriority="high"
+            >
+          </h1>
 
-        <h1 id="hero-title" lang="en">
-          <span>Lovinity</span>
-          <span class="title-outline">Production</span>
-        </h1>
+          <div class="hero-bottom">
+            <p class="hero-copy">
+              個性を愛し、ともに世界へ。<br>
+              謙虚さと感謝から生まれるエンターテインメント。
+            </p>
 
-        <h2>世界で共通する人間性の組織</h2>
+            <div class="actions">
+              <a class="button" href="#audition">
+                オーディション
+                <span class="arrow" aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
 
-        <p class="hero-message">
-          謙虚さと感謝を大切に。<br>
-          アーティストが自分の個性を愛し、
-          ファンとともに作品をつくり、
-          世界へ踏み出せる環境を育てます。
-        </p>
+      <div class="color-band" aria-hidden="true"></div>
 
-        <div class="actions">
-          <a class="button" href="#audition">
-            オーディション情報
-            <span class="arrow" aria-hidden="true">↗</span>
-          </a>
+      <div class="section">
+        <div class="container">
+          <p class="eyebrow" lang="en">ABOUT US</p>
+          <h2>世界で共通する人間性の組織</h2>
 
-          <a class="button button-outline" href="#school">
-            スクールについて
-            <span class="arrow" aria-hidden="true">↗</span>
-          </a>
+          <p class="intro">
+            Lovinity Productionは、謙虚さと感謝を大切にする
+            芸能プロダクションです。
+            アーティストが自分自身を愛し、
+            仲間やファンとの信頼を育みながら、
+            自分の表現で世界へ踏み出せる環境を目指しています。
+          </p>
+
+          <div class="grid">
+            <article class="card yellow">
+              <h3 class="card-label" lang="en">MISSION</h3>
+              <p>
+                アーティストが個性と力を発揮し、
+                心と体を大切にしながら長く活動できる環境をつくります。
+                ファンとともに作品を生み出し、
+                エンターテインメントを通じて社会に貢献します。
+              </p>
+            </article>
+
+            <article class="card mint">
+              <h3 class="card-label" lang="en">VISION</h3>
+              <p>
+                世界で活躍できるアーティストを育てます。
+                アーティストとファンがともに成長できる関係を築き、
+                健全な組織運営を続けます。
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <div class="section lavender">
+        <div class="container">
+          <p class="eyebrow" lang="en">OUR PEOPLE</p>
+          <h2>一人ひとりの思いが、作品になる。</h2>
+
+          <div class="grid">
+            <a class="card link-card" href="#team">
+              <h3 class="card-label" lang="en">TEAM L-PRO ↗</h3>
+              <p>代表の思いと、私たちが大切にするチームのあり方。</p>
+            </a>
+
+            <a class="card link-card yellow" href="#staff">
+              <h3 class="card-label" lang="en">JOIN US ↗</h3>
+              <p>アーティストの挑戦を、ともに支える仲間へ。</p>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="section mint">
+        <div class="container split">
+          <div>
+            <p class="eyebrow" lang="en">SCHOOL</p>
+            <h2 class="school-name" lang="en">
+              <span>Lovinity</span>
+              <span>Academy</span>
+            </h2>
+          </div>
+
+          <div>
+            <h3>表現する力を、ここから。</h3>
+            <p class="intro">
+              ボーカル・ダンス・演技・語学など、
+              学びを通じて自分の可能性を広げるスクール。
+              コース・料金・スケジュール・体験レッスンの詳細は、
+              Lovinity Academy公式HPでご案内しています。
+            </p>
+
+            <div class="actions">
+              <a
+                class="button"
+                href="https://lovinityacademy.github.io/lovinity-academy-website/"
+              >
+                Lovinity Academy 公式HPへ
+                <span class="arrow" aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <div class="brand-strip" lang="en">
-      ARTIST DEVELOPMENT / MUSIC / DANCE / PERFORMANCE
-    </div>
-
-    <!-- 理念 -->
-    <section id="about" aria-labelledby="about-title">
-      <div class="container">
-        <p class="section-label" lang="en">ABOUT US</p>
-        <h2 id="about-title">個性を愛し、ともに世界へ。</h2>
-
-        <p class="section-intro">
-          Lovinity Productionは、
-          アーティストとファンの信頼関係を大切にする芸能プロダクションです。
-          一人ひとりの個性と表現を尊重し、
-          作品づくりと活動を通して、ともに成長する環境を目指します。
-        </p>
-
-        <div class="cards">
-          <article class="card">
-            <h3 lang="en">Mission</h3>
-            <p>
-              アーティストが個性と力を発揮し、
-              心と体を大切にしながら長く活動できる環境をつくります。
-            </p>
-            <p>
-              ファンと一緒に作品を生み出し、
-              エンターテインメントを通じて社会に貢献します。
-            </p>
-          </article>
-
-          <article class="card">
-            <h3 lang="en">Vision</h3>
-            <p>
-              世界で活躍できるアーティストを育てます。
-              アーティストとファンがともに成長できる関係を築き、
-              健全な組織運営を続けます。
-            </p>
-          </article>
+    <!-- チーム紹介 -->
+    <section data-page id="team" aria-label="チーム紹介">
+      <div class="page-head lavender">
+        <div class="container">
+          <p class="eyebrow">チーム紹介</p>
+          <h1 class="display" lang="en" tabindex="-1">TEAM L-PRO</h1>
+          <p class="intro">
+            才能を信じ、挑戦を支え、ともに成長する。
+            私たちは、人とのつながりを大切にしています。
+          </p>
         </div>
       </div>
-    </section>
 
-    <!-- 代表・チーム -->
-    <section id="team" aria-labelledby="team-title">
-      <div class="container profile">
-        <img
-          class="profile-photo"
-          src="https://static.wixstatic.com/media/88ab5b_d2ce6bf908854802b8a13018ee0328c7~mv2.jpg"
-          alt="Lovinity Production代表 Emma"
-          loading="lazy"
-        >
+      <div class="section">
+        <div class="container split">
+          <img
+            class="portrait"
+            src="https://static.wixstatic.com/media/88ab5b_d2ce6bf908854802b8a13018ee0328c7~mv2.jpg"
+            alt="代表 Emma"
+            loading="lazy"
+          >
 
-        <div>
-          <p class="section-label" lang="en">TEAM L-PRO</p>
-          <h2 id="team-title">代表 Emma</h2>
+          <div>
+            <p class="eyebrow" lang="en">MESSAGE</p>
+            <p class="role">代表</p>
+            <h2>Emma</h2>
 
-          <p class="quote">
-            「人々に愛されるアーティストを<br>
-            生み出す環境を創りたい」
-          </p>
+            <p class="quote">
+              人々に愛されるアーティストを<br>
+              生み出す環境を創りたい。
+            </p>
 
-          <p class="profile-text">
-            それが私の信念です。
-            アーティストを目指す皆さんが、
-            自分の中に秘めた可能性を最大限に引き出し、
-            その可能性を信じてくれる仲間やファンとともに、
-            未来を切り開けるように。
-            その思いを大切にしています。
-          </p>
+            <p class="intro">
+              それが私の信念です。
+              アーティストを目指す皆さんが、
+              自分の中に秘めた可能性を最大限に引き出し、
+              その可能性を信じてくれる仲間やファンとともに、
+              未来を切り開けるように。
+              その思いを大切にしています。
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section yellow">
+        <div class="container">
+          <p class="eyebrow" lang="en">OUR VALUES</p>
+          <h2>ともに働くうえで、大切にしたいこと。</h2>
+
+          <div class="grid">
+            <article class="card">
+              <h3>謙虚さと感謝</h3>
+              <p>
+                関わってくださる人への敬意を忘れず、
+                支え合いながら活動する姿勢を大切にします。
+              </p>
+            </article>
+
+            <article class="card mint">
+              <h3>個性を尊重する</h3>
+              <p>
+                一人ひとりの背景や表現を尊重し、
+                自分らしさを生かせる環境を目指します。
+              </p>
+            </article>
+
+            <article class="card lavender">
+              <h3>ともにつくる</h3>
+              <p>
+                アーティスト・スタッフ・ファンの思いをつなぎ、
+                作品やプロジェクトを育てます。
+              </p>
+            </article>
+
+            <article class="card">
+              <h3>長く挑戦できる環境</h3>
+              <p>
+                心と体を大切にし、
+                安心して成長と挑戦を続けられる関係を築きます。
+              </p>
+            </article>
+          </div>
 
           <div class="actions">
-            <a
-              class="button"
-              href="https://lovinityproduction.wixsite.com/lovinity-production/team-l-pro"
-            >
-              チーム紹介・スタッフ募集
+            <a class="button" href="#staff">
+              スタッフ募集を見る
               <span class="arrow" aria-hidden="true">↗</span>
             </a>
           </div>
@@ -855,94 +837,144 @@
       </div>
     </section>
 
-    <!-- アーティスト育成・オーディション -->
-    <section id="audition" aria-labelledby="audition-title">
-      <div class="container">
-        <p class="section-label" lang="en">AUDITION</p>
-        <h2 id="audition-title">あなたの個性を、ステージへ。</h2>
-
-        <p class="section-intro">
-          表現する力と、人としての成長を大切に。
-          自分の個性を磨き、仲間とともに挑戦するアーティストを育てます。
-        </p>
-
-        <div class="cards">
-          <article class="card">
-            <h3>アーティスト育成</h3>
-            <p>
-              歌唱・ダンス・演技を学び、
-              楽曲や作品づくりに自ら関わる力を育てます。
-              個性を生かし、自分の思いを表現する力を磨きます。
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>ファンとつくる作品</h3>
-            <p>
-              楽曲やミュージックビデオのアイデア募集など、
-              ファンが制作に参加できる機会をつくり、
-              アーティストとのつながりを育てます。
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>作品を通じた社会貢献</h3>
-            <p>
-              社会課題をテーマにした作品づくりや、
-              アーティストとファンが一緒に参加できる
-              チャリティー企画を目指します。
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>海外を見据えた活動</h3>
-            <p>
-              語学や異文化理解を深め、
-              SNSやオンラインでの発信を通じて、
-              海外のファンに作品を届ける活動を支えます。
-            </p>
-          </article>
+    <!-- スタッフ募集 -->
+    <section data-page id="staff" aria-label="スタッフ募集">
+      <div class="page-head yellow">
+        <div class="container">
+          <p class="eyebrow">スタッフ募集</p>
+          <h1 class="display" lang="en" tabindex="-1">JOIN OUR TEAM</h1>
+          <p class="intro">
+            世界へ羽ばたく才能を、ともに。
+            Lovinity Productionの理念に共感し、
+            アーティストの活動を支える仲間を募集しています。
+          </p>
         </div>
+      </div>
 
-        <div class="actions">
-          <a
-            class="button"
-            href="mailto:lovinityproduction@gmail.com?subject=オーディションについてのお問い合わせ"
-          >
-            オーディションについて問い合わせる
-            <span class="arrow" aria-hidden="true">↗</span>
-          </a>
+      <div class="section">
+        <div class="container">
+          <p class="eyebrow" lang="en">WORK WITH US</p>
+          <h2>あなたの得意を、活動の力に。</h2>
+
+          <p class="intro">
+            ご関心のある分野や、これまでのご経験をお聞かせください。
+            具体的な業務内容・活動条件・募集状況は、
+            お問い合わせの際にご案内します。
+          </p>
+
+          <div class="grid">
+            <article class="card mint">
+              <h3>マネジメント・育成支援</h3>
+              <p>
+                アーティストの活動やスケジュールの調整、
+                練習・制作に取り組む環境づくりに関わる分野です。
+              </p>
+            </article>
+
+            <article class="card lavender">
+              <h3>企画・イベント運営</h3>
+              <p>
+                イベントやファンとの交流企画を考え、
+                準備から当日の運営までを支える分野です。
+              </p>
+            </article>
+
+            <article class="card yellow">
+              <h3>制作・技術サポート</h3>
+              <p>
+                音楽・映像・デザインなど、
+                作品を形にする制作や技術面に関わる分野です。
+              </p>
+            </article>
+
+            <article class="card">
+              <h3>広報・事業サポート</h3>
+              <p>
+                SNSやプロモーション、外部との連携などを通じて、
+                活動を広く届け、支える分野です。
+              </p>
+            </article>
+          </div>
+
+          <div class="actions">
+            <a class="button" href="#contact">
+              スタッフ募集について問い合わせる
+              <span class="arrow" aria-hidden="true">↗</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- スクール -->
-    <section id="school" aria-labelledby="school-title">
-      <div class="container school-inner">
-        <div>
-          <p class="section-label" lang="en">SCHOOL</p>
-          <h2 id="school-title" class="school-name" lang="en">
-            <span>Lovinity</span>
-            <span>Academy</span>
-          </h2>
+    <!-- オーディション -->
+    <section data-page id="audition" aria-label="オーディション">
+      <div class="page-head mint">
+        <div class="container">
+          <p class="eyebrow">アーティスト育成・オーディション</p>
+          <h1 class="display" lang="en" tabindex="-1">AUDITION</h1>
+          <p class="intro">
+            あなたの個性を、ステージへ。
+            表現する力と、人としての成長を大切にします。
+          </p>
         </div>
+      </div>
 
-        <div>
-          <h3>表現する力を、ここから。</h3>
+      <div class="section">
+        <div class="container">
+          <h2>自分らしい表現で、世界とつながる。</h2>
 
-          <p class="section-intro">
-            ボーカル・ダンス・演技・語学など、
-            学びを通して自分の可能性を広げるスクール。
-            コース内容・料金・スケジュール・体験レッスンについては、
-            Lovinity Academyの公式ホームページをご覧ください。
+          <p class="intro">
+            歌・ダンス・演技、そして作品づくり。
+            自分の可能性を信じ、仲間とともに挑戦する
+            アーティストを育てます。
+            募集状況や応募条件については、お問い合わせください。
           </p>
 
+          <div class="grid">
+            <article class="card yellow">
+              <h3>表現力を育てる</h3>
+              <p>
+                歌唱・ダンス・演技を学び、
+                楽曲や作品づくりに自ら関わる力を育てます。
+              </p>
+            </article>
+
+            <article class="card lavender">
+              <h3>ファンとともにつくる</h3>
+              <p>
+                アイデアや思いを共有し、
+                ファンが作品づくりに参加できる機会を目指します。
+              </p>
+            </article>
+
+            <article class="card mint">
+              <h3>海外を見据える</h3>
+              <p>
+                語学や異文化への理解を深め、
+                海外のファンに表現を届ける活動を支えます。
+              </p>
+            </article>
+
+            <article class="card">
+              <h3>社会への思いを届ける</h3>
+              <p>
+                社会課題をテーマにした作品や企画を通じて、
+                人々の共感や行動につながる発信を目指します。
+              </p>
+            </article>
+          </div>
+
           <div class="actions">
+            <a class="button" href="#contact">
+              オーディションについて問い合わせる
+              <span class="arrow" aria-hidden="true">↗</span>
+            </a>
+
             <a
-              class="button"
+              class="button button-outline"
               href="https://lovinityacademy.github.io/lovinity-academy-website/"
             >
-              Lovinity Academy 公式HPへ
+              スクールの詳細を見る
               <span class="arrow" aria-hidden="true">↗</span>
             </a>
           </div>
@@ -951,39 +983,113 @@
     </section>
 
     <!-- お問い合わせ -->
-    <section id="contact" aria-labelledby="contact-title">
-      <div class="container">
-        <p class="section-label" lang="en">CONTACT</p>
-        <h2 id="contact-title">お問い合わせ</h2>
+    <section data-page id="contact" aria-label="お問い合わせ">
+      <div class="page-head coral">
+        <div class="container">
+          <p class="eyebrow">お問い合わせ</p>
+          <h1 class="display" lang="en" tabindex="-1">CONTACT</h1>
+          <p class="intro">
+            出演・制作・イベントのご相談、
+            スタッフ募集やオーディションについて、
+            お気軽にご連絡ください。
+          </p>
+        </div>
+      </div>
 
-        <p class="section-intro">
-          出演・制作・イベントのご相談や、
-          募集に関するご質問は、
-          メールまたはフォームからご連絡ください。
-        </p>
+      <div class="section">
+        <div class="container contact-layout">
+          <div>
+            <h2>ご相談をお聞かせください。</h2>
+            <p class="intro">
+              下のメールアドレスから、直接ご連絡いただけます。
+            </p>
 
-        <p class="contact-email">
-          <a href="mailto:lovinityproduction@gmail.com">
-            lovinityproduction@gmail.com
-          </a>
-        </p>
+            <p class="email">
+              <a href="mailto:lovinityproduction@gmail.com">
+                lovinityproduction@gmail.com
+              </a>
+            </p>
 
-        <div class="actions">
-          <a
-            class="button"
-            href="mailto:lovinityproduction@gmail.com"
-          >
-            メールで問い合わせる
-            <span class="arrow" aria-hidden="true">↗</span>
-          </a>
+            <p class="intro">
+              スクールのコース・料金・体験レッスンについては、
+              Lovinity Academy公式HPをご覧ください。
+            </p>
 
-          <a
-            class="button button-outline"
-            href="https://lovinityproduction.wixsite.com/lovinity-production/contact"
-          >
-            お問い合わせフォーム
-            <span class="arrow" aria-hidden="true">↗</span>
-          </a>
+            <div class="actions">
+              <a
+                class="button button-outline"
+                href="https://lovinityacademy.github.io/lovinity-academy-website/"
+              >
+                スクール公式HPへ
+                <span class="arrow" aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+
+          <form id="contact-form">
+            <div class="field">
+              <label for="contact-name">お名前（必須）</label>
+              <input
+                id="contact-name"
+                name="name"
+                autocomplete="name"
+                maxlength="100"
+                required
+              >
+            </div>
+
+            <div class="field">
+              <label for="contact-email">メールアドレス（必須）</label>
+              <input
+                id="contact-email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                maxlength="254"
+                required
+              >
+            </div>
+
+            <div class="field">
+              <label for="contact-type">お問い合わせ種別（必須）</label>
+              <select id="contact-type" name="type" required>
+                <option value="">選択してください</option>
+                <option>出演・制作のご相談</option>
+                <option>イベント・協業のご相談</option>
+                <option>スタッフ募集について</option>
+                <option>オーディションについて</option>
+                <option>その他</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="contact-message">お問い合わせ内容（必須）</label>
+              <textarea
+                id="contact-message"
+                name="message"
+                maxlength="3000"
+                required
+              ></textarea>
+            </div>
+
+            <p class="form-note">
+              「メールを作成する」を押すと、
+              入力内容を記載したメール作成画面が開きます。
+              内容を確認して、メールアプリから送信してください。
+              入力内容はこのサイトには保存されません。
+            </p>
+
+            <button class="button" type="submit">
+              メールを作成する
+              <span class="arrow" aria-hidden="true">↗</span>
+            </button>
+
+            <p
+              id="form-status"
+              class="form-status"
+              role="status"
+            ></p>
+          </form>
         </div>
       </div>
     </section>
@@ -994,12 +1100,106 @@
       <span>© Lovinity Production</span>
 
       <div class="footer-links">
+        <a href="#team">チーム紹介</a>
+        <a href="#contact">お問い合わせ</a>
         <a href="https://lovinityacademy.github.io/lovinity-academy-website/">
           Lovinity Academy
         </a>
-        <a href="#top">ページの先頭へ ↑</a>
       </div>
     </div>
   </footer>
+
+  <script>
+    const pages = Array.from(document.querySelectorAll("[data-page]"));
+    const navigationLinks = Array.from(
+      document.querySelectorAll("nav a[href^='#']")
+    );
+
+    const pageTitles = {
+      home: "Lovinity Production",
+      team: "チーム紹介 | Lovinity Production",
+      staff: "スタッフ募集 | Lovinity Production",
+      audition: "オーディション | Lovinity Production",
+      contact: "お問い合わせ | Lovinity Production"
+    };
+
+    function showPage(moveFocus) {
+      const requestedPage = window.location.hash.slice(1) || "home";
+      const pageId = Object.hasOwn(pageTitles, requestedPage)
+        ? requestedPage
+        : "home";
+
+      pages.forEach(function (page) {
+        page.hidden = page.id !== pageId;
+      });
+
+      navigationLinks.forEach(function (link) {
+        if (link.getAttribute("href") === "#" + pageId) {
+          link.setAttribute("aria-current", "page");
+        } else {
+          link.removeAttribute("aria-current");
+        }
+      });
+
+      document.title = pageTitles[pageId];
+      window.scrollTo(0, 0);
+
+      if (moveFocus) {
+        const heading = document.querySelector(
+          "#" + pageId + " h1"
+        );
+        heading.focus({ preventScroll: true });
+      }
+    }
+
+    window.addEventListener("hashchange", function () {
+      showPage(true);
+    });
+
+    showPage(false);
+
+    const contactForm = document.getElementById("contact-form");
+
+    contactForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      if (!contactForm.reportValidity()) {
+        return;
+      }
+
+      const formData = new FormData(contactForm);
+      const name = String(formData.get("name")).trim();
+      const email = String(formData.get("email")).trim();
+      const type = String(formData.get("type"));
+      const message = String(formData.get("message")).trim();
+
+      const subject = "【Lovinity Production】" + type;
+
+      const body = [
+        "お名前",
+        name,
+        "",
+        "メールアドレス",
+        email,
+        "",
+        "お問い合わせ種別",
+        type,
+        "",
+        "お問い合わせ内容",
+        message
+      ].join("\r\n");
+
+      const mailUrl =
+        "mailto:lovinityproduction@gmail.com" +
+        "?subject=" + encodeURIComponent(subject) +
+        "&body=" + encodeURIComponent(body);
+
+      document.getElementById("form-status").textContent =
+        "メール作成画面で内容を確認し、送信してください。" +
+        "開かない場合は、掲載メールアドレスへ直接ご連絡ください。";
+
+      window.location.href = mailUrl;
+    });
+  </script>
 </body>
 </html>
